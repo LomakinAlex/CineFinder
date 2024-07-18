@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/icon.svg') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <title>Cine Finder</title>
+</head>
+<body>
+    <div class="container">
+        <img id="bg" src="{{ url_for('static', filename='img/bg.jpg') }}" width="100%">
+        <div class="h" tabindex="1">Here you can learn more about CineFinder!</div>
+    </div>
+<div class="alltext">
+    Cine Finder is a small web project developed by 14-year-old novice developer Lomakin Alexander. The project was completed in just one week and is designed to help users find movies based on their plot descriptions.<br>
+    Despite being a beginner project, Cine Finder boasts a large dataset of movies and impressive speed for handling such a dataset.
+    <br><br>
+    Key Features:
+    
+    <ul>
+        <li tabindex="2"><b>Movie Search by Plot:</b> Users can input keywords from a movie's plot to find relevant movie recommendations.</li>
+        <li tabindex="3"><b>Extensive Database:</b> The project utilizes a large dataset of movies to provide accurate and diverse search results.</li>
+        <li tabindex="4"><b>High Performance:</b> Thanks to optimized backend code, Cine Finder delivers fast search results, making it efficient and user-friendly.</li>
+    </ul>
+    <br>Technical Details:
+    <ul>
+        <li tabindex="5"><b>Backend:</b> The site is built using Flask, a lightweight and flexible web framework for Python.</li>
+        <li tabindex="6"><b>Search System:</b> The movie search functionality is implemented in Python, leveraging its powerful libraries and tools for data processing.</li>
+    </ul>
+
+    <br>
+    Cine Finder exemplifies how even novice developers can create functional and efficient web applications with the right tools and dedication.
+    <hr>
+    Feel free to adjust any part of this description to better fit your vision for the project :)
+    <br>
+</div>
+    <footer class="footer">
+        <a href="https://github.com/LomakinAlex/CineFinder" target="_blank"><img src="{{ url_for('static', filename='img/icon.svg') }}" width="50"></a>
+        Cine Finder
+        by <a href="https://github.com/LomakinAlex/" target="_blank"><img src="{{ url_for('static', filename='img/banner.png') }}" width="100"></a>
+        <div class="p"><a class="hl" href="/">Home</a> | <a class="hl" href="/about">About</a> | <a class="hl" href="/api">API</a> | <a class="hl" href="mailto:lomaleks95@gmail.com">Contact</a></div>
+    </footer>
+    <style>.alltext {font-size: 2vmax}</style>
+    <script>
+        let y = new Date().getFullYear();
+        document.getElementById("date").max = 2017
+        document.getElementById("date").value = 2017
+        document.getElementById("date")
+        addEventListener("change",function(event){
+            if (document.getElementById("date").value > document.getElementById("date").max){
+                document.getElementById("date").value = 2017
+            } else if (document.getElementById("date").value < 1901){
+                document.getElementById("date").value = 1901
+            }
+        })
+
+
+        function adv() {
+            var x = document.getElementById('uas');
+            if (x.style.display == 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

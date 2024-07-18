@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/icon.svg') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <title>Cine Finder</title>
+</head>
+<body>
+    <div class="container">
+        <img id="bg" src="{{ url_for('static', filename='img/bg.jpg') }}" width="100%">
+        <div class="h" tabindex="1">Can't find a movie?<br>Do you want to watch a movie?<br>Find it here!</div>
+    </div>
+    <div class="p" tabindex="2">Cine Finder — Here, you can find a movie even if you only remember certain aspects of its plot. Simply enter what you recall from the storyline, and CineFinder will help you locate the movie you're looking for.</p></div>
+    <br>
+    <form method="POST" action="/find">
+        <textarea type="text" name="toFind" rows="7" tabindex="3" id="maininput" placeholder="Enter the approximate plot of the movie you are looking for"></textarea>
+        <br>
+        <button type="submit" tabindex="4" id="search"><img src="{{ url_for('static', filename='img/search.png') }}"></button>
+    </form>
+    <div class="pcolumns" tabindex="5">Why CineFinder?</div><br>
+    <div class="columns">
+        <div class="column col1" tabindex="6">
+            <img src="{{ url_for('static', filename='img/movie-folder.svg') }} ">
+            <div class="hcol"><b>30,000 Movies</b></div>
+            <div class="dcol">That's how many movies we have in our database.</div>
+        </div>
+        <div class="column col2" tabindex="7">
+            <img src="{{ url_for('static', filename='img/speed.svg') }}">
+            <div class="hcol"><b>Speed</b></div>
+            <div class="dcol">It took 5 milliseconds to find movies mentioning 'New York'.</div>
+        </div>
+        <div class="column col3" tabindex="8">
+            <img src="{{ url_for('static', filename='img/api-management.svg') }}">
+            <div class="hcol"><b>API</b></div>
+            <div class="dcol">Get movies using the Developer API. <a class="hl" href="/api">More detail...</a></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <a href="https://github.com/LomakinAlex/CineFinder" target="_blank"><img src="{{ url_for('static', filename='img/icon.svg') }}" width="50"></a>
+        Cine Finder
+        by <a href="https://github.com/LomakinAlex/" target="_blank"><img src="{{ url_for('static', filename='img/banner.png') }}" width="100"></a>
+        <div class="p"><a class="hl" href="/">Home</a> | <a class="hl" href="/about">About</a> | <a class="hl" href="/api">API</a> | <a class="hl" href="mailto:lomaleks95@gmail.com">Contact</a></div>
+    </footer>
+    <style>
+        * {       
+            margin: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .ifphone {display:none}
+
+        .h {
+            position: absolute; /* Position the text absolutely within the container */
+            top: 50%; /* Position from the top */
+            left: 50%; /* Position from the left */
+            transform: translate(-50%, -33%); /* Center the text horizontally and vertically */
+            color: black; /* Set text color */
+            font-size: 3vmax;
+            z-index: 1; /* Ensure text is above the image */
+            text-align: center;
+        }
+
+        .input {
+            width: 100%;
+            height: calc(var(--widthI) + 136.8);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 3vw;
+        }
+
+        .hl {
+            text-decoration: none;
+            color: black;
+            font-size: 2vmax;
+        }
+
+        #maininput {
+            font-size: 3vw;
+            --widthI: width;
+            width: 50%;
+            resize: horizontal;
+            min-width: 25%;
+            max-width: 75%;
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(3, 32%);
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .column {
+            width: 100%;
+            height: 27.562vw;
+        }
+
+        .column img {
+            width: 15%
+        }
+
+        #search img {
+            width: 5vw;
+            height: 5vw;
+        }
+
+        .col1,.col2,.col3,.col4,.pcolumns {
+            text-align: center;
+            font-size: 3vw;
+        }
+
+        .footer {
+            width: 100%;
+            position: absolute;
+            background-color: rgb(222,222,222);
+            text-align: center;
+            vertical-align: text-bottom;
+            font-size: 4vmax;
+        }
+
+        .f1,.f2,.f3 {
+            text-align: center;
+            vertical-align:text-bottom;
+        }
+
+        #adv {font-size: 3vmax}
+        .uas {display: none}
+        .p {font-size: 2vmax}
+        .ic,.ic * {font-size: 2vmax}
+        .container,.input {position: relative}
+
+        form {text-align: center}
+    </style>
+    <script>
+        let y = new Date().getFullYear();
+        document.getElementById("date").max = 2017
+        document.getElementById("date").value = 2017
+        document.getElementById("date")
+        addEventListener("change",function(event){
+            if (document.getElementById("date").value > document.getElementById("date").max){
+                document.getElementById("date").value = 2017
+            } else if (document.getElementById("date").value < 1901){
+                document.getElementById("date").value = 1901
+            }
+        })
+
+
+        function adv() {
+            var x = document.getElementById('uas');
+            if (x.style.display == 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

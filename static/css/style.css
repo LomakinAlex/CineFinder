@@ -1,0 +1,151 @@
+* {       
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ifphone {display:none}
+
+.h {
+    position: absolute; /* Position the text absolutely within the container */
+    top: 50%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -33%); /* Center the text horizontally and vertically */
+    color: black; /* Set text color */
+    font-size: 3vmax;
+    z-index: 1; /* Ensure text is above the image */
+    text-align: center;
+}
+
+.input {
+    width: 100%;
+    height: calc(var(--widthI) + 136.8);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3vw;
+}
+
+.hl {
+    text-decoration: none;
+    color: black;
+    font-size: 2vmax;
+}
+
+#maininput {
+    font-size: 3vw;
+    --widthI: width;
+    width: 50%;
+    resize: horizontal;
+    min-width: 25%;
+    max-width: 75%;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+    justify-content: space-between;
+    width: 100%;
+}
+
+.column {
+    width: 100%;
+    height: 27.562vw;
+}
+
+.column img {
+    width: 15%
+}
+
+#search img {
+    width: 5vw;
+    height: 5vw;
+}
+
+.col1,.col2,.col3,.col4,.pcolumns {
+    text-align: center;
+    font-size: 3vw;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    background-color: rgb(222,222,222);
+    text-align: center;
+    vertical-align: text-bottom;
+    font-size: 4vmax;
+}
+
+.f1,.f2,.f3 {
+    text-align: center;
+    vertical-align:text-bottom;
+}
+
+#adv {font-size: 3vmax}
+.uas {display: none}
+.p {font-size: 2vmax}
+.ic,.ic * {font-size: 2vmax}
+.container,.input {position: relative}
+
+form {text-align: center}
+
+
+/* find.html */
+
+.findcontainer {
+    width: 100%;
+    height: auto;
+    background-color: #fafafa;
+    display: flex;
+    gap: 10px
+}
+
+.fcpart1 {width: 20%}
+.fcpart2 {width: 80%}
+#poster {width: 100%}
+
+.highlight {
+    background-color: yellow;
+    color: yellowgreen;
+}
+
+@media (width < 505px) {
+    .ifphone {display:block}
+    .columns {grid-template-columns: repeat(1, 100%)}
+    .col1,.col2,.col3,.col4,.pcolumns {font-size: 2.2vmax}
+    .column {height: 18vh}
+    #maininput {font-size: 2.5vmax;}
+}
+
+#findsearch {
+    font-size: 3vw;
+    resize: none;
+    width: 75%;
+}
+
+/* api.html */
+
+.apicodebin {
+    border-radius: 20px;
+}
+
+.apicode {
+    width: 60%;
+    height: 310px;
+    background-color: hsl(232, 100%, 97%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    white-space: pre-wrap;
+    text-align: left;
+    padding: 5px 5px 5px 5px
+}
+
+.apiplang {
+    background-color: aliceblue;
+    width: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: left;
+    font-size: 20px;
+    padding: 5px 5px 5px 5px
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/find.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/icon.svg') }}">
+    <title>Cine Finder — Find</title>
+</head>
+<body>
+    <div id="searchingform">
+        <form method="POST" action="/find">
+            <textarea type="text" name="toFind" rows="1" tabindex="1" id="findsearch" placeholder="Enter the approximate plot of the movie you are looking for">{{ w["toFind"] }}</textarea>
+            <button width="1" type="submit" tabindex="2" id="search"><img src="{{ url_for('static', filename='img/search.png') }}"></button>
+        </form>
+    </div>
+    <div id="main">
+        <p id="foundthings">{{leng}}</p>
+        {% for i in data %}
+        <div class="findcontainer">
+            <div class="fcpart1">
+                <img id="poster">
+            </div>
+            <div class="fcpart2">
+                <a target="_blank" href="{{i[6][1]}}"><h1 id="name">{{i[1][1] + " (" + i[0][1] + ")"}}</h1></a>
+                <h3>{{i[2][0] + ": " + i[2][1] + ", " + i[3][0] + ": " + i[3][1] + ", " + i[4][0] + ": " + i[4][1] + ", " + i[5][0] + ": " + i[5][1] + ", "}}</h5>
+                <h5 id="plot">{{i[7][1]}}</h5>
+            </div>
+        </div><br>
+        {% endfor %}
+    </div>
+    <script src="{{ url_for('static', filename='js/find.js') }}"></script>
+    <footer class="footer">
+        <a href="https://github.com/LomakinAlex/CineFinder" target="_blank"><img src="{{ url_for('static', filename='img/icon.svg') }}" width="50"></a>
+        Cine Finder
+        by <a href="https://github.com/LomakinAlex/" target="_blank"><img src="{{ url_for('static', filename='img/banner.png') }}" width="100"></a>
+        <div class="p"><a class="hl" href="/">Home</a>|<a class="hl" href="/about">About</a>|<a class="hl" href="mailto:lomaleks95@gmail.com">Contact</a></div>
+    </footer>
+</body>
+</html>

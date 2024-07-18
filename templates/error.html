@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/icon.svg') }}">
+    <title>Cine Finder</title>
+</head>
+<body>
+    <div class="container">
+        <img id="bg" src="{{ url_for('static', filename='img/bg.jpg') }}" width="100%">
+        <div class="h" tabindex="1">{{error}}</div>
+        <a href="/" class="h2"><img src="{{ url_for('static', filename='img/icon.svg') }}" width="50" alt="CineFinder — Home"></a>
+    </div>
+    <style>
+        * {margin: 0; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif}
+        .container {position: relative}
+        .h,.h2 {
+            position: absolute; /* Position the text absolutely within the container */
+            top: 50%; /* Position from the top */
+            left: 50%; /* Position from the left */
+            transform: translate(-50%, -50%); /* Center the text horizontally and vertically */
+            color: black; /* Set text color */
+            font-size: 3vmax;
+            z-index: 1; /* Ensure text is above the image */
+            text-align: center;
+        }
+        .h2 {transform: translate(-50%, 200%)}
+    </style>
+</body>
+</html>
